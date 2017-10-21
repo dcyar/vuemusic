@@ -1,21 +1,33 @@
 <template lang="pug">
 
-  li
-    img(:src="artist.image[2]['#text']")
-    h4: a(:href="artist.url" target="_blank") {{ artist.name }}
+    .card.artist
+        .card-image
+            figure(class="image is-4by3")
+                img(:src="artist.image[3]['#text']" :alt="artist.name")
+        .card-content
+            .media
+                .media-left
+                    figure(class="image is-48x48")
+                        img(:src="artist.image[1]['#text']" :alt="artist.name")
+                .media-content
+                    p(class="title is-4") {{ artist.name }}
+                    p(class="subtitle is-7") @{{ artist.name }}
+        footer(class="card-footer")
+            a(:href="artist.url" class="card-footer-item" target="_blank") Ver Artista en Last.fm
 
 </template>
 
 <script>
-  export default {
-    name: 'artist',
-    props: ['artist'],
-  };
+export default {
+    name: "artist",
+    props: ["artist"]
+};
 </script>
 
 <style lang="stylus" scoped>
-li
-  display inline-block
-  border 1px solid
-  margin 10px 1px
+.artist {
+    display: inline-block;
+    margin: 10px 5px;
+    width: 300px;
+}
 </style>
