@@ -1,7 +1,7 @@
 <template lang="pug">
 
   #app
-    img(class='logo' src='./assets/logo.jpg')
+    img(class='logo' src='./dist/logo.jpg')
     h1 VueMusic
 
     select(v-model="selectedCountry")
